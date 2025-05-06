@@ -22,8 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Generate participants list
         const participantsList = details.participants.length
-          ? `<ul>${details.participants.map(participant => `<li>${participant}</li>`).join("")}</ul>`
-          : "<p>No participants yet.</p>";
+          ? `
+            <ul class="participants-list">
+              ${details.participants.map(participant => `<li class="participant-item">${participant}</li>`).join("")}
+            </ul>
+          `
+          : "<p class='no-participants'>No participants yet.</p>";
 
         activityCard.innerHTML = `
           <h4>${name}</h4>
